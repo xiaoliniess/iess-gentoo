@@ -9,16 +9,20 @@ DESCRIPTION="LightDM Slick Greeter"
 HOMEPAGE="https://github.com/linuxmint/slick-greeter"
 SRC_URI="https://github.com/linuxmint/slick-greeter/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="GPL-3 LGPL-3"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 x86"
 IUSE=""
 
 COMMON_DEPEND="x11-libs/gtk+:3
-	>=x11-misc/lightdm-1.2.2"
+	>=x11-misc/lightdm-1.2.2[introspection,vala]
+    media-libs/freetype:2
+    x11-libs/cairo
+    media-libs/libcanberra
+    x11-libs/pixman
+    x11-libs/libXext"
 
 DEPEND="${COMMON_DEPEND}
-	dev-util/intltool
 	sys-devel/gettext"
 
 RDEPEND="${COMMON_DEPEND}
